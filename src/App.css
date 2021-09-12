@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+.textType{
+  margin-left:450px;
+}
+
+.create {
+width:500px;
+height:200px;
+margin-left:450px;
+margin-right:200px;
+}
+.imp{
+  height:200px;
+  width:500px;
+  border: 2px solid red;
+}
+/* .texture{
+  width:500px;
+  height:300px;
+  margin-right:200px;
+} */
+
+/* .abc{
+  position:absolute;
+
+} */
