@@ -5,13 +5,11 @@ import TextForm from './Components/TextForm';
 import About from './Components/About';
 import React, { useState } from 'react'
 import Alert from './Components/Alert';
-// import {
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
-//   Link
-
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 
 
@@ -48,30 +46,30 @@ function App() {
     setTimeout(() => {
       setAlert(null);
     }, 1500);
-}
+  }
 
   return (
     <>
 
-      {/* <Router> */}
+      <Router>
+
         <Navbar title="TextTiles" mode={mode} toggleMode={toggleMode} text={text} />
         <Alert alert={alert} />
-        <TextForm heading="Enter the text here" mode={mode}/>
-        <About/>
         <div className="containre my-3">
-        </div>
-          {/* <Switch>
+        <Switch>
 
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/"> //exact path can be used here.
-             
-            </Route>
-          </Switch> */}
-       
-      {/* </Router> */}
+          <Route path="/about">
+            <About mode={mode}/>
+          </Route>
+          <Route path="/">
+            <TextForm heading="Enter the text here" mode={mode}/>
+          </Route>
+        </Switch>
+        </div>
+
+      </Router>
       {/* always put router outside the syntex. */}
+
     </>
   );
 

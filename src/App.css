@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #1e3677;
 }
 
 @keyframes App-logo-spin {
@@ -38,14 +38,18 @@
 }
 
 .textType{
-  margin-left:450px;
+  margin-left:300px;
+  /* margin-right:200px; */
+}
+.textform{
+  margin-left:300px ;
 }
 
-.create {
+.create{
 width:500px;
 height:200px;
-margin-left:450px;
-margin-right:200px;
+margin-left:300px;
+/* margin-right:200px; */
 }
 .imp{
   height:200px;
@@ -61,4 +65,13 @@ margin-right:200px;
 /* .abc{
   position:absolute;
 
+} */
+.change{
+  width:800px;
+  align-self: justify;
+  margin-left:200px;
+}
+
+/* .navbar{
+width:1550px;
 } */

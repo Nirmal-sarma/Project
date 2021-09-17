@@ -35,23 +35,25 @@ const [text,setText] = useState("Enter the text");
 return(
 <>
 <h1 className="textType" style={{color :props.mode ==='dark'? 'white':'black'}}>{props.heading}</h1>
-<div className="mb-3" style={{color :props.mode ==='dark'? 'white':'black'}}>
+<div className="mb-3 " style={{color :props.mode ==='dark'? 'white':'black'}}>
   <label forName="exampleFormControlTextarea1" className="form-label textType"><h3> <center>   Example textarea </center>  </h3></label>
-  <textarea className="form-control create" value={text} style={{backgroundColor: props.mode ==='dark'? 'grey':'white'}} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+  <textarea className="form-control create " value={text} style={{backgroundColor: props.mode ==='dark'? '#574ba2':'white'}} onChange={handleOnChange} id="myBox" rows="8"></textarea>
 </div>
 <div>
-    <button className="btn btn-primary textType" onClick={handleUpClick}>ConvertUppercase</button>
-    <button className="btn btn-primary mx-2" onClick={handleUpClick1}>ConvertLowerCase</button>
-    <button className="btn btn-primary mx-2" onClick={handleClearText}>ClearText</button>
+    <button  disabled={text.length===0} className="btn btn-primary textform" onClick={handleUpClick}>ConvertUppercase</button>
+    <button  disabled={text.length===0} className="btn btn-primary mx-2" onClick={handleUpClick1}>ConvertLowerCase</button>
+    <button  disabled={text.length===0} className="btn btn-primary mx-2" onClick={handleClearText}>ClearText</button>
 </div>
 
 <div className="container my-2 textType" style={{color :props.mode ==='dark'? 'white':'black'}}>
 <h1>Your text summary</h1>
-<p>{text.split(" ").length} words and {text.length}characters</p>
-<p>{(0.008 * text.split("").length)}Minutes Read</p>
+<p>{text.split(" ").filter((element)=>{
+return element.length !==0
+}).length} words and {text.length} characters</p>
+<p>{(0.008 * text.split(" ").length)}Minutes Read</p>
 <h2>Preview</h2>
 <div className="imp">
-{text}
+{text.length>0?text:"Nothing to preview!"}
 </div>
 
 </div>
