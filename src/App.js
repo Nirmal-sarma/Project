@@ -18,10 +18,21 @@ function App() {
   const [alert, setAlert] = useState(null);
   const [text, setText] = useState("enable Dark Mode");
 
+  const removebodyclass=()=>{
+    document.body.classList.remove('bg-light');
+    document.body.classList.remove('bg-dark');
+    document.body.classList.remove('bg-danger');
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-warning');
+    document.body.classList.remove('bg-primary');
 
 
+  }
 
-  const toggleMode = () => {
+
+  const toggleMode = (cls) => {
+    removebodyclass();
+    document.body.classList.add('bg-'+cls);
     if (mode === 'light') {
       setMode('dark');
       document.body.style.backgroundColor = ' #291a38';
@@ -36,6 +47,8 @@ function App() {
     }
   }
 
+
+  
   const alertstats = (message, type) => {
 
     setAlert({
